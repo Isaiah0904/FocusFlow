@@ -1,6 +1,6 @@
 body {
   background: white;
-  padding-top: 130px;
+  padding-top: 150px;
   margin: 0;
 }
 
@@ -10,6 +10,8 @@ body {
   box-shadow: 0 3px 10px 3px rgba(0, 0, 0, 0.1);
   position: fixed;
   top: 0;
+  left: 0;
+  z-index: 100;
 }
 
 .header {
@@ -85,9 +87,10 @@ nav {
   align-items: center;
   gap: 18px;
   background: white;
-  box-shadow: 0 10px 10px 3px rgba(0, 0, 0, 0.1);
+  box-shadow: 2px 3px 10px 3px rgba(0, 0, 0, 0.1);
   padding: 2% 4%;
   border-radius: 10px;
+  z-index: 0;
 }
 
 .card:hover {
@@ -145,6 +148,7 @@ nav {
 }
 
 .function-container{
+  font-family: "Poppins", sans-serif;
   width: 100%;
   background-color: white;
   margin-top: 60px;
@@ -160,7 +164,7 @@ nav {
 .task-card{
   flex: 3;
   box-shadow: 2px 3px 10px 3px rgba(0, 0, 0, 0.1);
-  padding: 2% 4%;
+  padding: 2% 3% ;
   border-radius: 20px;
 }
 
@@ -172,6 +176,21 @@ nav {
   text-align: center;
   padding: 45px;
   border-bottom: 1px solid rgb(199, 199, 199);
+  font-weight: 400;
+  font-style: normal;
+  text-align: center;
+  font-size: 15px;
+  color: rgb(141, 133, 133);
+}
+
+.task-count{
+  width: 100%;
+  text-align: left;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 15px;
+  color: rgb(141, 133, 133);
+  margin-bottom: 0;
 }
 
 .task-card-2{
@@ -182,7 +201,6 @@ nav {
 .task-header{
   width: 100%;
   text-align: left;
-  font-family: "Poppins", sans-serif;
   font-weight: 500;
   font-style: normal;
 }
@@ -193,7 +211,6 @@ nav {
   flex-direction: row;
   gap: 18px;
   text-align: left;
-  font-family: "Poppins", sans-serif;
   font-weight: 400;
   font-style: normal;
 }
@@ -216,7 +233,6 @@ nav {
   background: #7e22ce;
   border: none;
   border-radius: 14px;
-  font-family: "Poppins", sans-serif;
   font-weight: 500;
   font-style: normal;
   font-size: 15px;
@@ -227,6 +243,8 @@ nav {
   cursor: pointer;
   background: #a855f7;
 }
+
+
 
 @media (max-width: 700px) {
   nav {
