@@ -1,13 +1,15 @@
 body {
   background: white;
-  padding: 0;
+  padding-top: 130px;
   margin: 0;
 }
 
 .header-container {
   width: 100%;
   background-color: white;
-  box-shadow: 0 10px 10px 3px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 3px 10px 3px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  top: 0;
 }
 
 .header {
@@ -65,7 +67,6 @@ nav {
   width: 90%;
   margin: auto;
   text-align: center;
-  padding-top: 50px;
 }
 
 .card-section {
@@ -87,6 +88,11 @@ nav {
   box-shadow: 0 10px 10px 3px rgba(0, 0, 0, 0.1);
   padding: 2% 4%;
   border-radius: 10px;
+}
+
+.card:hover {
+  scale: 1.02;
+  transition: all 0.25s ease-in-out;
 }
 
 .image .fa-circle-check {
@@ -138,6 +144,90 @@ nav {
   color: rgb(141, 133, 133);
 }
 
+.function-container{
+  width: 100%;
+  background-color: white;
+  margin-top: 60px;
+}
+
+.task-card-container{
+  display: flex;
+  flex-direction: row;
+  gap: 250px;
+  width: 100%;
+}
+
+.task-card{
+  flex: 3;
+  box-shadow: 2px 3px 10px 3px rgba(0, 0, 0, 0.1);
+  padding: 2% 4%;
+  border-radius: 20px;
+}
+
+.task-count{
+  text-align: left;
+}
+
+.task-description{
+  text-align: center;
+  padding: 45px;
+  border-bottom: 1px solid rgb(199, 199, 199);
+}
+
+.task-card-2{
+  flex: 2;
+  box-shadow: 2px 3px 10px 3px rgba(0, 0, 0, 0.1);
+}
+
+.task-header{
+  width: 100%;
+  text-align: left;
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.task-function{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  gap: 18px;
+  text-align: left;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.task-function [type = "text"]{
+  width: 90%;
+  padding: 8px;
+  margin-top: 10px;
+  border: 1px solid rgb(199, 199, 199);
+  border-radius: 8px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.task-function button{
+  margin-top: 10px;
+  padding: 0 14px;
+  color: white;
+  background: #7e22ce;
+  border: none;
+  border-radius: 14px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 15px;
+  transition: background 0.5s;
+}
+
+.task-function button:hover{
+  cursor: pointer;
+  background: #a855f7;
+}
+
 @media (max-width: 700px) {
   nav {
     height: 20vh;
@@ -176,5 +266,12 @@ nav {
   .card {
     padding: 4% 4%;
     gap: 8px;
+  }
+
+  .task-card-container{
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 25px;
+    text-align: center;
   }
 }
