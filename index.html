@@ -91,15 +91,30 @@
               <p class="task-count">0 of 0 remaining</p>
             </div>
             <div class="task-card-2">
-              <h1 class="task-header">
-                Today's Tasks
+              <h1 class="task-header-2">
+                Focus Time
               </h1>
-              <div class="task-function">
-                <input type="text" placeholder="Add a new task..." />
-                <button>+</button>
+              <div class="timer-function">
+                <i class="fa-regular fa-clock" style="color: rgb(134, 129, 129);"></i>
+                <select>
+                  <option value="15">15 min</option>
+                  <option value="25">25 min</option>
+                  <option value="30">30 min</option>
+                  <option value="45">45 min</option>
+                  <option value="60">60 min</option>
+                </select>
               </div>
-              <p>No tasks yet. Add one to get started!</p>
-              <p>0 of 0 remaining</p>
+              <div class="timer-section">
+                <div class="timer-loop">
+                  <h1 class="timer">15:00</h1>
+                  <p class="timer-description">Ready to focus</p>
+                </div>
+              </div>
+              <div class="action-buttons">
+                <button class="start-button"><i class="fa-solid fa-play" style="color: #ffffff;"></i>Start</button>
+                <button class="reset-button"><i class="fa-solid fa-rotate-left" style="color: #000000;"></i>Reset</button>
+              </div>
+              <p class="focus-time-description">Stay focused for 15 minutes</p>
             </div>
           </div>
         </div>
