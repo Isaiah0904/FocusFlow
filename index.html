@@ -99,7 +99,7 @@
               </h1>
               <div class="timer-function">
                 <i class="fa-regular fa-clock" style="color: rgb(134, 129, 129);"></i>
-                <select>
+                <select id="focusTimeSelect">
                   <option value="15">15 min</option>
                   <option value="25">25 min</option>
                   <option value="30">30 min</option>
@@ -109,7 +109,7 @@
               </div>
               <div class="timer-section">
                 <div class="timer-loop">
-                  <h1 class="timer">15:00</h1>
+                  <h1 class="timer" id="timerDisplay">15:00</h1>
                   <p class="timer-description">Ready to focus</p>
                 </div>
               </div>
@@ -117,7 +117,7 @@
                 <button class="start-button"><i class="fa-solid fa-play" style="color: #ffffff;"></i>Start</button>
                 <button class="reset-button"><i class="fa-solid fa-rotate-left" style="color: #000000;"></i>Reset</button>
               </div>
-              <p class="focus-time-description">Stay focused for 15 minutes</p>
+              <p class="focus-time-description" id="focusDescription">Stay focused for 15 minutes</p>
             </div>
           </div>
         </div>
@@ -128,5 +128,21 @@
           </div>
         </div>
     </div>
+    <script>
+      const select = document.getElementById("focusTimeSelect");
+      const timerDisplay = document.getElementById("timerDisplay");
+      const focusDescription = document.getElementById("focusDescription");
+
+      function updateFocusTime() {
+        const selectedValue = select.value;
+        const minutes = parseInt(selectedValue);
+        const formattedTime = minutes.toString().padStart(2, "0") + ":00";
+        timerDisplay.textContent = formattedTime;
+        focusDescription.textContent = `Stay focused for ${minutes} minutes`;
+      }
+
+      select.addEventListener("change", updateFocusTime);
+      updateFocusTime(); // Initialize on load
+    </script>
   </body>
 </html>

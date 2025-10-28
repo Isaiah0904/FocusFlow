@@ -1,5 +1,6 @@
 body {
   background: white;
+  padding-top: 150px;
   margin: 0;
 }
 
@@ -293,11 +294,13 @@ nav {
 .timer-loop{
   display: flex;
   flex-direction: column;
-  width: fit-content;
+  align-items: center;
+  justify-content: center;
+  width: 180px;
+  height: 180px;              /* 👈 Equal width & height for a circle */
   margin: auto;
   border: 8px solid  rgb(141, 133, 133);
   border-radius: 100px;
-  padding: 8% 5%
 }
 
 
@@ -370,6 +373,10 @@ select{
   transition: 0.5s;
   width: 100px;
   background-color: rgba(199, 199, 199, 0.1);
+}
+
+select:active, select:focus{
+  border: 2px solid #a855f7;
 }
 
 option{
