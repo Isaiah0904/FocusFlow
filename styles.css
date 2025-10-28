@@ -170,7 +170,6 @@ nav {
   border-radius: 20px;
 }
 
-
 .task-description {
   text-align: center;
   padding: 45px;
@@ -206,7 +205,7 @@ nav {
   font-style: normal;
 }
 
-.percentage{
+.percentage {
   width: 100%;
   text-align: right;
   font-weight: 400;
@@ -216,7 +215,7 @@ nav {
   margin-bottom: 0;
 }
 
-.task-footer{
+.task-footer {
   width: 100%;
   display: flex;
   flex-direction: row;
@@ -274,6 +273,110 @@ nav {
   background: #a855f7;
 }
 
+/* Task list */
+.task-list {
+  list-style: none;
+  padding: 0;
+  margin: 12px 0 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.task-list-section {
+  padding: 15px 0;
+  text-align: left;
+}
+
+/* Single task */
+.task-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #ffffff;
+  border: 1px solid #e6e6e6;
+  padding: 10px 12px;
+  border-radius: 8px;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.03);
+}
+
+/* left side: checkbox + text */
+.task-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* task text */
+.task-text {
+  font-size: 14px;
+  color: #222;
+  word-break: break-word;
+}
+
+/* completed text */
+.task-text.completed {
+  text-decoration: line-through;
+  color: #888;
+  opacity: 0.9;
+}
+
+/* buttons on the right */
+.task-actions {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+/* small icon buttons */
+.task-actions button {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+
+.task-actions .delete-btn {
+  color: #d9534f;
+  padding: 8px;
+  border-radius: 50px;
+}
+
+
+.task-checkbox {
+  width: 18px;
+  height: 18px;
+  border-radius: 4px;
+  border: 1.5px solid #ccc;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.task-checkbox.checked {
+  background: #3267c3;
+  border-color: #3267c3;
+  color: white;
+}
+
+
+.task-actions .edit-btn {
+  color: #3267c3; 
+  padding: 6px;
+  border-radius: 50px;
+}
+
+
+.task-actions .edit-btn:hover {
+  background: rgba(50, 103, 195, 0.12);
+}
+
+.task-actions .delete-btn:hover {
+  background: rgba(217, 83, 79, 0.12);
+}
+
 .timer-function {
   display: flex;
   flex-direction: row;
@@ -291,22 +394,25 @@ nav {
   margin: 40px 0;
 }
 
-.timer-loop{
+.timer-loop {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   width: 180px;
-  height: 180px;              /* 👈 Equal width & height for a circle */
+  height: 180px; /* 👈 Equal width & height for a circle */
   margin: auto;
-  border: 8px solid  rgb(141, 133, 133);
+  border: 8px solid rgb(141, 133, 133);
   border-radius: 100px;
 }
-
 
 .timer {
   font-size: 50px;
   display: inline;
+}
+
+.timer-description {
+  font-size: 14px;
 }
 
 .timer-section h1,
@@ -348,21 +454,22 @@ nav {
 
 .reset-button:hover {
   cursor: pointer;
-  background:  rgba(204, 195, 195, 0.2);
+  background: rgba(204, 195, 195, 0.2);
 }
 
-.fa-play, .fa-rotate-left{
+.fa-play,
+.fa-rotate-left {
   margin-right: 8px;
 }
 
-.focus-time-description{
+.focus-time-description {
   margin-top: 25px;
   margin-bottom: 7px;
   font-size: 12px;
-  color:  rgb(141, 133, 133);
+  color: rgb(141, 133, 133);
 }
 
-select{
+select {
   padding: 8px;
   border-radius: 8px;
   border: 2px solid rgb(199, 199, 199);
@@ -375,15 +482,16 @@ select{
   background-color: rgba(199, 199, 199, 0.1);
 }
 
-select:active, select:focus{
+select:active,
+select:focus {
   border: 2px solid #a855f7;
 }
 
-option{
+option {
   border-radius: 50px;
 }
 
-.body-footer{
+.body-footer {
   width: 100%;
   text-align: center;
   margin: auto;
@@ -392,7 +500,7 @@ option{
   border-top: 1px solid rgb(199, 199, 199);
 }
 
-.footer-text p{
+.footer-text p {
   width: 50%;
   text-align: center;
   font-size: 15px;
@@ -451,17 +559,17 @@ option{
     text-align: center;
   }
 
-  .footer-text p{
+  .footer-text p {
     font-size: 10px;
   }
 }
 
-@media (min-width: 701px) and (max-width : 1139px){
-  .task-card-container{
+@media (min-width: 701px) and (max-width: 1139px) {
+  .task-card-container {
     gap: 70px;
   }
 
-  .task-card-2{
+  .task-card-2 {
     flex: 4;
   }
 }
