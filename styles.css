@@ -12,7 +12,7 @@ body {
   top: 0;
   left: 0;
   z-index: 100;
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(15px);
 }
 
 .header {
@@ -336,13 +336,11 @@ nav {
   font-size: 16px;
 }
 
-
 .task-actions .delete-btn {
   color: #d9534f;
   padding: 8px;
   border-radius: 50px;
 }
-
 
 .task-checkbox {
   width: 18px;
@@ -361,13 +359,11 @@ nav {
   color: white;
 }
 
-
 .task-actions .edit-btn {
-  color: #3267c3; 
+  color: #3267c3;
   padding: 6px;
   border-radius: 50px;
 }
-
 
 .task-actions .edit-btn:hover {
   background: rgba(50, 103, 195, 0.12);
@@ -491,13 +487,26 @@ option {
   border-radius: 50px;
 }
 
+.daily-quote {
+  text-align: center;
+  color: rgb(141, 133, 133);
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 14px;
+  font-style: italic;
+  margin-top: 40px;
+  opacity: 0.85;
+}
+
 .body-footer {
   width: 100%;
   text-align: center;
   margin: auto;
-  margin-top: 80px;
+  margin-top: 10px;
   padding-top: 10px;
-  border-top: 1px solid rgb(199, 199, 199);
+  border-top: 1px solid rgba(199, 199, 199, 0.2);
+  box-shadow: 0 1px 10px 1px rgba(0, 0, 0, 0.1);
 }
 
 .footer-text p {

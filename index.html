@@ -37,7 +37,7 @@
               <i class="fa-regular fa-circle-check" style="color: #28d754;"></i>
             </div>
             <div class="counter-box">
-              <p class="counter">0</p>
+              <p id="completedCounter" class="counter">0</p>
               <p class="count-description">
                 Tasks Completed
               </p>
@@ -125,6 +125,7 @@
           </div>
         </div>
       </div>
+      <p id="dailyQuote" class="daily-quote"></p>
       <div class="body-footer">
           <div class="footer-text">
             <p>© 2025 FocusFlow, Built for productivity. All rights reserved.</p>
@@ -149,6 +150,16 @@
       let interval;
       let isRunning = false; 
       let remainingSeconds = 15 * 60; // default 15 minutes
+
+      // Focus session stats
+      let focusSessions = 0;
+      let totalMinutesFocused = 0;
+
+      // Get the top card counters
+      const tasksCompletedCounter = document.querySelectorAll(".card .counter")[0];
+      const focusSessionsCounter = document.querySelectorAll(".card .counter")[1];
+      const minFocusedCounter = document.querySelectorAll(".card .counter")[2];
+
 
       const startBtn = document.querySelector(".start-button");
       const resetBtn = document.querySelector(".reset-button");
@@ -196,10 +207,22 @@
 
           if (remainingSeconds <= 0) {
             clearInterval(interval);
-            statusText.textContent = "Well done! Session complete";
-            startBtn.textContent = "Start";
             isRunning = false;
+            statusText.textContent = "Well done! Session complete";
+            startBtn.innerHTML = `<i class="fa-solid fa-play" style="color: #ffffff;"></i> Start`;
+
+            const sessionMinutes = parseInt(select.value);
+            focusSessions++;
+            totalMinutesFocused += sessionMinutes;
+
+            focusSessionsCounter.textContent = focusSessions;
+            minFocusedCounter.textContent = totalMinutesFocused;
+            
+            // Enable select again for the next session
+            select.style.pointerEvents = "auto";
+            select.style.opacity = "1";
           }
+
 
           updateTimerDisplay();
         }, 1000);
@@ -330,7 +353,8 @@
 
       /* Toggle done state */
       function toggleTaskDone(id) {
-        tasks = tasks.map(t => t.id === id ? {...t, done: !t.done} : t);
+        const task = tasks.find(t => t.id === id);
+        task.done = !task.done;  // Flip done state directly
         renderTasks();
       }
 
@@ -360,13 +384,33 @@
         taskCountText.textContent = `${remaining} of ${total} remaining`;
         taskPercentage.textContent = `${percent}% done`;
 
-        // Update the small "Tasks Completed" card in the top cards
-        // (we'll find the first .card-section .card .counter element)
-        const taskCardCounter = document.querySelector('.card-section .card .counter');
-        if (taskCardCounter) {
-          taskCardCounter.textContent = done;
-        }
+        // ✅ Update Tasks Completed counter directly
+        const tasksCompletedCounter = document.querySelectorAll(".card .counter")[0];
+        tasksCompletedCounter.textContent = done;
       }
+
+      const dailyQuoteElement = document.getElementById("dailyQuote");
+
+      const quotes = [
+        "Small progress is still progress. What matters most is that you keep moving forward.",
+        "Focus on the step in front of you, not the whole staircase.",
+        "You don't need more time — you need more focus.",
+        "Discipline is doing what needs to be done, even when you don’t feel like doing it.",
+        "Great achievements begin with small daily habits.",
+        "If you commit to nothing, you’ll be distracted by everything.",
+        "Success is built on consistency, not intensity."
+      ];
+
+      // Pick a quote based on today’s date (changes every new day automatically)
+      function setDailyQuote() {
+        const today = new Date().getDate();
+        const index = today % quotes.length;
+        dailyQuoteElement.textContent = `“${quotes[index]}”`;
+      }
+
+      // ✅ Run on load
+      setDailyQuote();
+
 
       /* initialize empty render */
       renderTasks();
