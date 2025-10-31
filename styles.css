@@ -571,6 +571,10 @@ option {
   .footer-text p {
     font-size: 10px;
   }
+
+  .task-footer{
+    margin-bottom: 10px;
+  }
 }
 
 @media (min-width: 701px) and (max-width: 1139px) {
@@ -582,3 +586,4 @@ option {
     flex: 4;
   }
 }
+
