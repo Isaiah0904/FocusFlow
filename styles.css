@@ -1,6 +1,5 @@
 body {
   background: white;
-  padding-top: 150px;
   margin: 0;
 }
 
@@ -26,7 +25,7 @@ nav {
   align-items: center;
   margin-top: 0px;
   text-align: center;
-  height: 18vh;
+  height: 14vh;
 }
 
 .logo {
@@ -64,6 +63,7 @@ nav {
 
 .main-body-container {
   width: 100%;
+  margin-top: 40%;
 }
 
 .main-body {
@@ -487,8 +487,14 @@ option {
   border-radius: 50px;
 }
 
+.quote-holder{
+  width: 100%;
+}
+
 .daily-quote {
+  width: 80%;
   text-align: center;
+  margin: auto;
   color: rgb(141, 133, 133);
   font-family: "Poppins", sans-serif;
   font-weight: 400;
@@ -525,6 +531,11 @@ option {
   nav {
     height: 20vh;
     margin-top: 0px;
+  }
+
+
+  .header-container{
+    margin-bottom: 40px;
   }
 
   .header {
@@ -570,6 +581,10 @@ option {
 
   .footer-text p {
     font-size: 10px;
+  }
+
+  .daily-quote{
+    font-size: 13px;
   }
 
   .task-footer{
